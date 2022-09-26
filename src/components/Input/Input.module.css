@@ -1,0 +1,34 @@
+.input {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+
+    color: var(--color);
+    font-size: var(--font-size);
+    background: var(--inv-color);
+
+    border: none;
+    outline: none;
+}
+
+.input::-webkit-input-placeholder {
+    color: var(--color);
+    opacity: 0.3;
+}
+
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.styled {
+    height: 40px;
+
+    outline: auto;
+
+    width: var(--app-wdith);
+    min-width: var(--app-min-width);
+
+    border: 1px solid var(--color);
+    border-radius: 4px;
+
+    padding: 4px;
+}

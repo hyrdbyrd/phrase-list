@@ -1,0 +1,11 @@
+.list {
+    height: 80vh;
+}
+
+.listWrapper {
+    padding: 10px 0;
+}
+
+.list .listItem:not(:first-child) {
+    margin-top: 10px;
+}

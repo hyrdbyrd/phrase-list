@@ -1,0 +1,33 @@
+.input {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.pointer:hover {
+    transform: scale(1.2);
+}
+
+.phrase {
+    min-width: var(--app-min-width);
+    width: var(--app-wdith);
+    max-width: var(--app-wdith);
+
+    display: grid;
+    grid-template-columns: 24px 100px 24px 1fr 24px;
+}
+
+.count {
+    text-align: center;
+}
+
+.phraseText {
+    padding-right: 5px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+    margin-left: 10px;
+}

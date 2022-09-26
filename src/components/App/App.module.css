@@ -1,0 +1,37 @@
+.app {
+    --app-wdith: calc(60vw);
+    --app-min-width: 320px;
+    --font-size: 24px;
+
+    --color: black;
+    --inv-color: white;
+    --sh-color: rgba(51, 51, 51, 0.3);
+
+    background: var(--inv-color);
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+
+    font-size: var(--font-size);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    box-shadow: inset 0 0 10px 10px var(--sh-color);
+}
+
+.inversed {
+    --color: white;
+    --inv-color: black;
+    --sh-color: rgba(204, 204, 204, 0.3);
+}
+
+@media (max-width: 900px) {
+    .app {
+        box-shadow: none;
+    }
+}
