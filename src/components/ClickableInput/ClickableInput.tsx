@@ -71,7 +71,7 @@ export const ClickableInput: FC<ClickableInputProps> = (props) => {
 
     return (
         <Text onClick={open} className={cn(className, styles.clickable)}>
-            {value}
+            {originalValue}
         </Text>
     );
 };

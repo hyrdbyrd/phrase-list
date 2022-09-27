@@ -3,7 +3,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export type PhraseType = string;
 
 export interface CounterData {
-    listIdx: number;
     phrase: PhraseType;
     count: number;
 }
@@ -32,11 +31,7 @@ export const counterSlice = createSlice({
             const phrase = action.payload;
             if (!phrase || state.phrases[phrase]) return;
 
-            state.phrases[phrase] = {
-                count: 0,
-                phrase,
-                listIdx: state.list.length,
-            };
+            state.phrases[phrase] = { count: 0, phrase };
             state.list.push(phrase);
         },
         deleteCounter: (state, action: PayloadAction<PhraseType>) => {
@@ -59,13 +54,14 @@ export const counterSlice = createSlice({
         ) => {
             const { oldPhrase, newPhrase } = action.payload;
 
+            if (state.phrases[newPhrase]) return;
+
             const phrase = { ...state.phrases[oldPhrase] };
 
             delete state.phrases[oldPhrase];
 
             phrase.phrase = newPhrase;
-            state.list[phrase.listIdx] = newPhrase;
-
+            state.list[state.list.indexOf(oldPhrase)] = newPhrase;
             state.phrases[newPhrase] = phrase;
         },
         setCountPhrase: (
