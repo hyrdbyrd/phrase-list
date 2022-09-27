@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
 import { Phrase } from './Phrase/Phrase';
 
+import cn from 'classnames';
+
 import styles from './PhraseList.module.css';
 
 export interface PhraseListProps {
@@ -13,7 +15,7 @@ export const PhraseList: FC<PhraseListProps> = ({ className }) => {
     const list = useSelector((state: RootState) => state.counters.list);
 
     return (
-        <div className={styles.list}>
+        <div className={cn(className, styles.list)}>
             <div className={styles.listWrapper}>
                 {list.map((phrase) => (
                     <Phrase
