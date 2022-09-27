@@ -63,7 +63,7 @@ export const ClickableInput: FC<ClickableInputProps> = (props) => {
                 onBlur={onBlur}
                 onChange={onChange}
                 onKeyDown={onKeyDown}
-                className={className}
+                className={cn(className, styles.input)}
             />
         );
     }
