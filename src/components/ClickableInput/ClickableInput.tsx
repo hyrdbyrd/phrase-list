@@ -58,6 +58,7 @@ export const ClickableInput: FC<ClickableInputProps> = (props) => {
     if (isOpen) {
         return (
             <Input
+                autoFocus
                 type={type}
                 value={value}
                 onBlur={onBlur}
